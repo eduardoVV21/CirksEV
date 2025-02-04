@@ -14,7 +14,7 @@ public class FadeScript : MonoBehaviour
         tempColor = img.color;
         tempColor.a = 1f;
         img.color = tempColor;
-        StartCoroutine(FadeOut(0.15f));
+        StartCoroutine(FadeOut(0.025f));
     }
 
     IEnumerator FadeOut (float seconds)

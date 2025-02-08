@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class SceneChangeScript : MonoBehaviour
 {
     public FadeScript fadeScript;
-
+    public SaveLoadScript saveLoadScript;
     public void CloseGame()
     {
         StartCoroutine(Delay("quit", -1, ""));
@@ -46,7 +46,7 @@ public class SceneChangeScript : MonoBehaviour
         else if (string.Equals(command, "main", StringComparison.OrdinalIgnoreCase))
         {
             yield return fadeScript.FadeIn(0.025f);
-
+            saveLoadScript.SaveGame(characterIndex, name);
             SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
     }

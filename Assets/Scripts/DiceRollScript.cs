@@ -47,22 +47,23 @@ public class DiceRollScript : MonoBehaviour
     private void Update()
     {
         if(rigidbody != null)
-        if(Input.GetMouseButton(0) && isLanded || 
-            Input.GetMouseButton(0) && !firstThrow)
+        {
+            if ((Input.GetMouseButton(0) && isLanded) || (Input.GetMouseButton(0) && !firstThrow))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
+
                 if (Physics.Raycast(ray, out hit))
                 {
-                    if (hit.collider != null &&
-                    hit.collider.gameObject == this.gameObject)
+                    if (hit.collider != null && hit.collider.gameObject == this.gameObject)
                     {
-                        if(!firstThrow)
-                        firstThrow = true;
+                        if (!firstThrow)
+                            firstThrow = true;
 
                         RollDice();
                     }
                 }
             }
+        }
     }
 }

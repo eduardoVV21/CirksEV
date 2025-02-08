@@ -13,7 +13,6 @@ public class RolledNumberScript : MonoBehaviour
     void Awake()
     {
         diceRollScript = FindObjectOfType<DiceRollScript>();
-
     }
 
     // Update is called once per frame

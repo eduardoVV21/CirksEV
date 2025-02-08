@@ -13,32 +13,24 @@ public class SideDetectionScript : MonoBehaviour
 
     private void OnTriggerStay(Collider sideCollider)
     {
-        if(diceRollScript != null)
+        if (diceRollScript != false)
         {
-            if(diceRollScript.GetComponent<Rigidbody>().velocity == Vector3.zero)
-            {
-                diceRollScript.isLanded = true;
-                diceRollScript.diceFaceNum = sideCollider.name;
-            } else
-            {
-                diceRollScript.isLanded = false;
+            if (diceRollScript != null)
+            { 
+                if (diceRollScript.GetComponent<Rigidbody>().velocity == Vector3.zero)
+                {
+                    diceRollScript.isLanded = true;
+                    diceRollScript.diceFaceNum = sideCollider.name;
+                }
+                else
+                {
+                    diceRollScript.isLanded = false;
+                }
             }
         }
         else
         {
             Debug.LogError("DicerollScript not found in a scene!");
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

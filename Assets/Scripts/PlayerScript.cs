@@ -25,7 +25,6 @@ public class PlayerScript : MonoBehaviour
 
         otherPlayers = new int[PlayerPrefs.GetInt("PlayerCount")];
         string[] nameArray = ReadLinesFromFile(textFileName);
-        Debug.Log(nameArray.Length);
         for(int i=0; i<otherPlayers.Length; i++)
         {
             spawnPoint.transform.position += new Vector3(0.2f, 0, 0.08f);
